@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>안녕하세요, 최호입니다.</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="203ed6b7-c1e9-801a-b529-f1058294b49f" class="page sans"><header><h1 class="page-title">안녕하세요, 최호입니다.</h1><p class="page-description"></p></header><div class="page-body"><div id="203ed6b7-c1e9-809f-bddd-f8452973c434" class="column-list"><div id="203ed6b7-c1e9-805b-8d2b-e218f0a5c7fb" style="width:75%" class="column"><h1 id="203ed6b7-c1e9-8021-ac6f-e31e06cd0c05" class=""><mark class="highlight-blue">누구나 쉽게 적응하여 개발할 수 있는 환경을 추구합니다.</mark></h1><p id="203ed6b7-c1e9-8085-8da5-d7ad124b5706" class="">사용자 경험뿐만 아니라 동료들의 개발자 경험도 중요하게 생각합니다. 팀원들과의 코드 리뷰를 통해 지속적으로 성장하고 있습니다. UI 구현과 기능 개발에만 그치지 않고, 코드 품질 향상에도 깊은 관심을 기울이는 개발자가 되고자 합니다.</p></div><div id="203ed6b7-c1e9-8074-aac1-db3398b0d40d" style="width:25%" class="column"><p id="203ed6b7-c1e9-80cc-8f7f-cec5fcfda425" class="">
+</p><figure id="203ed6b7-c1e9-8086-aa23-f38bba06aa03" class="image"><a href="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%8E%E1%85%AC%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20203ed6b7c1e9801ab529f1058294b49f/835efa4b-8940-4ebb-8a3f-a1b645e01760.png"><img style="width:320px" src="%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD,%20%E1%84%8E%E1%85%AC%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%20203ed6b7c1e9801ab529f1058294b49f/835efa4b-8940-4ebb-8a3f-a1b645e01760.png"/></a></figure></div></div><h1 id="203ed6b7-c1e9-8023-a5ac-d79a5eecd69b" class=""><mark class="highlight-blue">Career</mark></h1><div id="203ed6b7-c1e9-80d8-8ca8-c3291e333641" class="column-list"><div id="203ed6b7-c1e9-80cb-a306-ef2d545fe5a0" style="width:18.75%" class="column"><h3 id="203ed6b7-c1e9-80cd-9570-db7a17bfd3e1" class="">아이겐 코리아</h3><p id="203ed6b7-c1e9-806a-b98a-d76f6b3debf6" class="">2025.03 - ing</p><p id="203ed6b7-c1e9-80f3-9c2d-e5f0d1a2d200" class="">
+</p></div><div id="203ed6b7-c1e9-801d-8cc1-e2f91b26877a" style="width:81.25%" class="column"><h3 id="203ed6b7-c1e9-8032-9a14-fa65d7c33217" class="">자사 어드민 TypeScript 마이그레이션</h3><p id="203ed6b7-c1e9-80fc-b746-e62e8d1db741" class=""><strong>Tech</strong>: React, TypeScript 5.8.3, styled-components, TSDoc</p><p id="203ed6b7-c1e9-80e7-9c90-d999e4902cb2" class=""><strong>역할</strong>: 프론트엔드 개발자</p><p id="203ed6b7-c1e9-80cf-919f-dddc20b5d5c7" class=""><strong>Problem</strong></p><p id="203ed6b7-c1e9-8045-9a66-fe08058e47e6" class="">기존 어드민 프로젝트는 TypeScript 3.9.5를 기반으로 구성되어 있었으며, TS 5.8.3로 마이그레이션을 시도하는 과정에서 500건 이상의 타입 오류가 발생했습니다. 특히 데이터 시각화 컴포넌트에서 타입 불일치로 인해 빌드가 불가능한 상황이었고, 타입 문서화 체계가 부재하여 협업과 유지보수에 어려움이 있었습니다.</p><p id="203ed6b7-c1e9-80f2-a5cb-e1912aa3eb3c" class=""><strong>Action</strong></p><ul id="203ed6b7-c1e9-8063-88ad-ceb8aa146aaf" class="bulleted-list"><li style="list-style-type:disc">암시적 any 제거, 옵셔널 체이닝 및 타입 가드 도입으로 타입 안정성 확보</li></ul><ul id="203ed6b7-c1e9-80df-9cef-e59ec26dcec9" class="bulleted-list"><li style="list-style-type:disc">styled-components의 인라인 타입을 제네릭 기반 인터페이스로 리팩토링</li></ul><ul id="203ed6b7-c1e9-8068-bbbd-de3c0336e4d6" class="bulleted-list"><li style="list-style-type:disc">공통 유틸, API 타입, 컴포넌트 Props에 TSDoc 기반 주석을 작성하여 내부 문서화</li></ul><ul id="203ed6b7-c1e9-8060-bffc-fbad5f60d47f" class="bulleted-list"><li style="list-style-type:disc">타입 오류 수정과 병행하여 점진적 마이그레이션 전략 수립</li></ul><p id="203ed6b7-c1e9-80f0-8531-c39bdfed39bc" class=""><strong>Result</strong></p><ul id="203ed6b7-c1e9-80a8-9862-e2314703bf49" class="bulleted-list"><li style="list-style-type:disc">빌드 시간 19% 단축 (246.22초 → 199.51초)</li></ul><ul id="203ed6b7-c1e9-801c-bf8e-d5ead80e5360" class="bulleted-list"><li style="list-style-type:disc">null 관련 런타임 오류 감소</li></ul><ul id="203ed6b7-c1e9-80f0-ba52-fe8f8a010044" class="bulleted-list"><li style="list-style-type:disc">코드 가독성과 유지보수성 향상, 신규 인원 온보딩 속도 개선</li></ul><ul id="203ed6b7-c1e9-8057-9f5c-d37bb5076155" class="bulleted-list"><li style="list-style-type:disc">정적 타입 시스템과 문서화의 중요성을 체감하며 개발 문화 개선에 기여</li></ul><hr id="203ed6b7-c1e9-802d-a219-c765b364d8a5"/><h3 id="203ed6b7-c1e9-8044-9856-c2f325c3bb0a" class="">Vaunce 어드민 QA 및 데이터 시각화 개선</h3><p id="203ed6b7-c1e9-8083-919d-f60ad3f19e86" class=""><strong>Tech</strong>: React, TypeScript, Zustand, Recharts, REST API</p><p id="203ed6b7-c1e9-8032-98ae-f184a0ea7cd5" class=""><strong>역할</strong>: 프론트엔드 개발자</p><p id="203ed6b7-c1e9-80af-b8ec-dd46135485fc" class=""><strong>Problem</strong></p><p id="203ed6b7-c1e9-80db-8009-cda67643256d" class="">센터 정보가 프론트엔드와 백엔드 양측에서 이중 관리되고 있어 유지보수에 비효율이 발생했고, 기존 사용자 분석 그래프는 인사이트 도출에 한계가 있었습니다. 또한, 시각화 컴포넌트가 하드코딩되어 재사용성과 확장성이 떨어지는 구조였습니다.</p><p id="203ed6b7-c1e9-80d5-bac1-d3708e932c80" class=""><strong>Action</strong></p><ul id="203ed6b7-c1e9-8078-96ab-e239d0611815" class="bulleted-list"><li style="list-style-type:disc">센터 정보를 API 연동 방식으로 리팩토링하여 실시간 동기화 체계 구축</li></ul><ul id="203ed6b7-c1e9-8085-b60b-fc2264393b06" class="bulleted-list"><li style="list-style-type:disc">Recharts를 활용해 성별/연령 기반 사용자 분석 차트를 신규 구현</li></ul><ul id="203ed6b7-c1e9-8054-b7ab-c0d17ae8d9bd" class="bulleted-list"><li style="list-style-type:disc">다양한 데이터셋을 대응할 수 있도록 시각화 컴포넌트를 추상화하여 재사용성 강화</li></ul><ul id="203ed6b7-c1e9-8069-9558-d24e194d64b1" class="bulleted-list"><li style="list-style-type:disc">Zustand를 도입해 상태 관리 구조를 단순화하고 타입 안전성을 확보</li></ul><p id="203ed6b7-c1e9-80d1-b2d8-e5391a392747" class=""><strong>Result</strong></p><ul id="203ed6b7-c1e9-80e9-921a-ce8a96bb9f7e" class="bulleted-list"><li style="list-style-type:disc">센터 관리 자동화로 운영 효율성 향상</li></ul><ul id="203ed6b7-c1e9-80df-90c5-c8a0f9235efb" class="bulleted-list"><li style="list-style-type:disc">사용자 인사이트 도출 속도 30% 향상</li></ul><ul id="203ed6b7-c1e9-8043-8a31-e8810ed0394c" class="bulleted-list"><li style="list-style-type:disc">시각화 컴포넌트 재사용 기반 확보로 향후 통계 페이지 리소스 약 50% 절감 기대</li></ul><ul id="203ed6b7-c1e9-8080-880c-da7083cee369" class="bulleted-list"><li style="list-style-type:disc">프론트-백엔드 간 데이터 일관성 확보로 서비스 신뢰도 개선</li></ul></div></div><hr id="203ed6b7-c1e9-8070-94b9-e1b2a2c9918d"/><h1 id="203ed6b7-c1e9-803e-9089-ff4c09d43606" class=""><mark class="highlight-blue">Projects</mark></h1><div id="203ed6b7-c1e9-8034-902f-d34808fd3a78" class="column-list"><div id="203ed6b7-c1e9-80e5-9e09-c6028f2635e0" style="width:18.75%" class="column"><h3 id="203ed6b7-c1e9-800e-9de7-fa0baac170c4" class="">VOIM</h3><p id="203ed6b7-c1e9-8020-a995-e5d46891c81b" class="">2024.07 - 2024.08</p></div><div id="203ed6b7-c1e9-80f1-a13e-cf557330b7e8" style="width:81.25%" class="column"><h3 id="203ed6b7-c1e9-8037-832f-ea3038ca94f0" class="">시각 정보 해독이 어려운 사용자를 위한 웹 접근성 보조 크롬 확장 프로그램</h3><p id="203ed6b7-c1e9-8039-bc0b-d6736c0f01f1" class=""><strong>팀원</strong>: 기획자 2, 디자이너 2, 프론트엔드 2, 백엔드 2</p><p id="203ed6b7-c1e9-809b-b666-c8accd9ad655" class=""><strong>역할</strong>: 프론트엔드</p><p id="203ed6b7-c1e9-8022-8130-c0b46aa25301" class=""><strong>Tech</strong>: React, TypeScript, Webpack, TailwindCSS, Chrome Extension API</p><p id="203ed6b7-c1e9-8025-9387-fdb0e3fc967c" class=""><strong>Problem</strong></p><p id="203ed6b7-c1e9-80a0-a3e4-ee4ba60ef393" class="">약시 사용자는 웹사이트 내 <strong>이미지로 제공되는 성분표</strong>나 <strong>작은 글씨 안내문</strong>을 제대로 인식하지 못해 필수 정보를 놓치는 경우가 많았습니다. 또한, 웹 접근성을 높이기 위한 보조 기능이 흩어져 있거나 조작이 어려워, <strong>독립적인 정보 접근이 불가능</strong>한 상황이었습니다.</p><p id="203ed6b7-c1e9-804a-a652-ea99f855cafa" class=""><strong>Action</strong></p><ul id="203ed6b7-c1e9-8016-a194-fff0e254c7da" class="bulleted-list"><li style="list-style-type:disc">웹페이지 상단에 항상 떠 있는 <strong>접근성 기능 플로팅 버튼 UI</strong>를 구현하고, <strong>사용자 드래그로 위치 조절이 가능</strong>하게 하여 콘텐츠 가림 현상을 최소화했습니다.</li></ul><ul id="203ed6b7-c1e9-8037-bcc7-e95896037c43" class="bulleted-list"><li style="list-style-type:disc"><strong>이미지 내 텍스트를 OCR로 추출하고</strong>,  중요한 정보를 강조 후 aira-label을 포함해 제공해 시각 정보에 접근이 어려운 사용자도 웹 콘텐츠를 <strong>청각적으로 소비</strong>할 수 있도록 했습니다.</li></ul><ul id="203ed6b7-c1e9-8093-8fd3-d396759f3be1" class="bulleted-list"><li style="list-style-type:disc">명도/아이콘 크기/투명도 설정이 가능한 <strong>고대비 테마</strong>, <strong>글자 크기/굵기 조절 기능</strong>을 제공하여, 사용자 <strong>시력 상태에 따른 맞춤형 커스터마이징</strong>이 가능하도록 구현했습니다.</li></ul><ul id="203ed6b7-c1e9-8034-a07d-ca6cc7b012bd" class="bulleted-list"><li style="list-style-type:disc"><strong>스크린 리더 사용자</strong>를 위해 aria-label, role 속성 등을 적극 활용해 <strong>시각 요소 없이도 기능을 명확히 전달</strong>할 수 있도록 구성하고, <strong>탭 순서</strong>를 고려한 <strong>시맨틱한 구조</strong>로 키보드 탐색 흐름을 최적화했습니다.</li></ul><ul id="203ed6b7-c1e9-8030-95a4-f305206dbf99" class="bulleted-list"><li style="list-style-type:disc">크롬 확장 프로그램의 content script에서 UI를 삽입할 때 발생한 메시지 통신 오류를 해결하기 위해, <strong>iframe 기반 UI 구조</strong>로 전환해 <strong>독립적 실행 컨텍스트와 안정적인 통신 구조</strong>를 확보했습니다.</li></ul><p id="203ed6b7-c1e9-808a-a13b-e3157b6ae128" class=""><strong>Result</strong></p><ul id="203ed6b7-c1e9-8032-9990-f0d460d39cd5" class="bulleted-list"><li style="list-style-type:disc"><strong>OCR + 스크린 리더 조합 기능</strong>을 통해 이미지 기반 정보를 음성으로 안내함으로써, 약시 사용자의 <strong>정보 접근성과 독립성</strong>을 크게 향상시켰습니다.</li></ul><ul id="203ed6b7-c1e9-80c3-90e8-da21d85cedb8" class="bulleted-list"><li style="list-style-type:disc">React와 Map API처럼 실행 방식이 다른 시스템 사이에서도 <strong>구조적으로 충돌을 방지하고, UI 상태 동기화를 보장</strong>하는 개발 경험을 축적했습니다.</li></ul><ul id="203ed6b7-c1e9-8054-b296-de3a80830be1" class="bulleted-list"><li style="list-style-type:disc">iframe 기반 구조로 전환한 이후, content script와의 <strong>양방향 메시지 통신이 원활</strong>하게 이루어졌고, UI의 <strong>보안성과 유지보수성</strong>도 함께 개선되었습니다.</li></ul><ul id="203ed6b7-c1e9-8004-8515-d49644051f85" class="bulleted-list"><li style="list-style-type:disc">실제 사용자 테스트 결과, <strong>약시 사용자도 플로팅 버튼을 통한 기능 접근이 직관적이며 편리하다</strong>는 피드백을 받아, UI/UX 설계의 효과를 입증했습니다.</li></ul></div></div><hr id="203ed6b7-c1e9-80a5-a27c-f472a11f19cd"/><div id="203ed6b7-c1e9-80e1-8cd3-cb139547b9b1" class="column-list"><div id="203ed6b7-c1e9-80b0-ac9c-d0625ba2bfcb" style="width:18.75%" class="column"><h3 id="203ed6b7-c1e9-803c-8144-e1a5f60dc91b" class="">Moping</h3><p id="203ed6b7-c1e9-80da-a408-f69a71c73b99" class="">2024.10 - 2024.12</p><p id="203ed6b7-c1e9-8061-835e-d6aa7c899db2" class="">
+</p></div><div id="203ed6b7-c1e9-8042-9358-e48635fa4602" style="width:81.25%" class="column"><h3 id="203ed6b7-c1e9-80db-9623-daece7deaefc" class="">다인원 모임 장소 조율 및 추천 서비스</h3><p id="203ed6b7-c1e9-80e2-b8f4-d921b66ddd4f" class=""><strong>팀원</strong>: 기획자 3, 디자이너 2, 프론트엔드 2, 백엔드 2<br/><br/><strong>역할</strong>: 프론트엔드 리드</p><p id="203ed6b7-c1e9-80a3-a9aa-d50e5eb25065" class=""><strong>Tech</strong>: Next.js, TypeScript, Zustand, TailwindCSS, Vercel</p><p id="203ed6b7-c1e9-801f-a9be-fe9765c573a6" class=""><strong>Problem</strong></p><p id="203ed6b7-c1e9-8008-b279-eba4142bf634" class="">다수의 인원이 모임 장소를 정할 때, 위치 간 거리 차이와 각자의 선호 장소로 인해 장소 선정이 비효율적이고 번거로운 문제가 있었습니다. 또한, 지도 기반 인터페이스와 실시간 투표 기능을 동시에 제공하려 할 때, 명령형 중심의 네이버 맵 API와 선언형 UI 구조 간의 충돌로 인해 성능 저하와 상태 불일치 문제가 반복적으로 발생했습니다.</p><p id="203ed6b7-c1e9-803c-b715-ceb88d4cfedf" class=""><strong>Action</strong></p><ul id="203ed6b7-c1e9-80a2-adff-f37463be4db6" class="bulleted-list"><li style="list-style-type:disc"><strong>프론트엔드 리더</strong>로서 전체 UI/UX 흐름을 설계하고, 기능 개발 및 코드 리뷰를 주도했습니다.</li></ul><ul id="203ed6b7-c1e9-80d1-aeb7-f92fe7817ae1" class="bulleted-list"><li style="list-style-type:disc">사용자가 <strong>지도에 핀을 추가하고, 실시간 투표 및 필터링</strong>할 수 있는 UI를 구현했습니다.</li></ul><ul id="203ed6b7-c1e9-8054-90b7-d37ce378d675" class="bulleted-list"><li style="list-style-type:disc"><strong>마커 상태와 UI 상태를 분리</strong>하여 선언형(React)과 명령형(Map API) 간의 충돌 문제를 구조적으로 해결했습니다.</li></ul><ul id="203ed6b7-c1e9-8057-ba80-e1bbc98316b8" class="bulleted-list"><li style="list-style-type:disc">마커 클릭 시 UI 확대, 투표자 아바타 시각화, 본인 미투표 여부에 따른 조건부 렌더링 등을 구현하며 직관적인 사용자 경험을 제공했습니다.</li></ul><ul id="203ed6b7-c1e9-80dc-97aa-edc2ac55e9d5" class="bulleted-list"><li style="list-style-type:disc"><strong>JWT 기반 로그인 시스템</strong>을 구축하여 사용자 인증과 세션 관리를 처리하고, 클라이언트 측에서 인증 상태 기반 UI 조건부 렌더링을 적용했습니다.</li></ul><p id="203ed6b7-c1e9-802e-a953-e5f8ef3e2e33" class=""><strong>Result</strong></p><ul id="203ed6b7-c1e9-8023-99df-ce5d0b1236db" class="bulleted-list"><li style="list-style-type:disc">네이버 맵 API와 React 상태 간 충돌을 해결하여 <strong>마커 클릭 시 지연 없는 즉각적인 반응성과 UI 정확도 향상</strong>을 이끌었습니다.</li></ul><ul id="203ed6b7-c1e9-8010-854b-dcb109309bce" class="bulleted-list"><li style="list-style-type:disc"><strong>불필요한 리렌더링을 최소화</strong>하여 투표와 마커 필터링 기능의 <strong>성능을 체감할 정도로 개선</strong>했고, 사용자 경험이 매끄럽고 신뢰도 높은 인터페이스로 발전했습니다.</li></ul><ul id="203ed6b7-c1e9-8059-a382-de921fe29a4b" class="bulleted-list"><li style="list-style-type:disc">프로젝트 전체에서 UI의 품질과 기술적 일관성을 유지하며 팀의 개발 속도와 코드 유지보수성을 크게 높였습니다.</li></ul></div></div><hr id="203ed6b7-c1e9-80fb-892a-fa8fe5640edc"/><div id="203ed6b7-c1e9-8019-ad8f-ebb1c7bfa50d" class="column-list"><div id="203ed6b7-c1e9-8050-a5c6-ca2ef838337e" style="width:18.75%" class="column"><h3 id="203ed6b7-c1e9-80cd-91be-edfa2668162f" class="">SKT Devocean 마이페이지 개선 과제</h3><p id="203ed6b7-c1e9-80d9-9e78-e0f1fd8307fe" class="">2024.08 - 2024.09</p></div><div id="203ed6b7-c1e9-80bb-8c6e-e8facdfdd4d7" style="width:81.25%" class="column"><h3 id="203ed6b7-c1e9-8006-95d5-ee0d8006551d" class="">SKT 개발자 커뮤니티 Devocean 마이페이지 UI/UX 개선 및 프로토타입 구현</h3><p id="203ed6b7-c1e9-80c9-980f-ce5d9d14d042" class=""><strong>팀원</strong>: 기획자 3, 디자이너 2, 프론트엔드 2, 백엔드 2</p><p id="203ed6b7-c1e9-8073-a126-c55a07ffe7e2" class=""><strong>역할</strong>: PM 및 프론트엔드</p><p id="203ed6b7-c1e9-808e-9d40-fa14a2a4f446" class=""><strong>Tech</strong>: jQuery, TypeScript, TailwindCSS</p><p id="203ed6b7-c1e9-80cc-aeeb-f74f1f51876b" class=""><strong>Problem</strong></p><p id="203ed6b7-c1e9-8096-b523-f19101b5d753" class="">SKT 개발자 커뮤니티 Devocean의 기존 마이페이지는 사용자 활동 현황을 직관적으로 파악하기 어렵고, 재방문을 유도하는 요소가 부족하여 서비스 사용률이 저조했습니다. 특히, 활동 데이터 시각화와 신규 사용자 온보딩 경험이 미흡해 커뮤니티 참여와 활성화가 제한적이었습니다.</p><p id="203ed6b7-c1e9-80d4-bf75-f451d8a2ee66" class=""><strong>Action</strong></p><ul id="203ed6b7-c1e9-806e-ae49-c89be491c127" class="bulleted-list"><li style="list-style-type:disc">활동 이력을 날짜별로 시각화하는 <strong>활동 캘린더 모듈</strong>을 설계 및 개발하여 재사용성과 확장성을 높였습니다.</li></ul><ul id="203ed6b7-c1e9-80bf-a24c-d4eb04817486" class="bulleted-list"><li style="list-style-type:disc"><strong>Chart.js를 활용한 읽은 블로그 카테고리 분포 원형 그래프</strong>와 <strong>SVG 기반 커스터마이징 커뮤니티 랭킹 차트 UI</strong>를 구현해 사용자의 활동 현황을 직관적으로 표현했습니다.</li></ul><ul id="203ed6b7-c1e9-807a-addf-fd10f495108c" class="bulleted-list"><li style="list-style-type:disc"><strong>풀페이지 스크롤 온보딩 페이지</strong>를 개발하고, Fade-in 및 Slide-in 애니메이션을 적용하여 신규 사용자의 서비스 이해도를 높이고 몰입감 있는 경험을 제공했습니다.</li></ul><ul id="203ed6b7-c1e9-807d-9024-f7722a3db229" class="bulleted-list"><li style="list-style-type:disc">PM으로서 팀과 함께 전체 일정과 마일스톤을 수립 및 관리하며, 주간 회의를 통해 진행 상황을 점검하고 우선순위 조정을 담당했습니다.</li></ul><ul id="203ed6b7-c1e9-80d2-9960-f8518407dabc" class="bulleted-list"><li style="list-style-type:disc">서비스 사용률 향상을 위한 <strong>게이미피케이션 요소(활동 리워드, 랭킹 시스템 등)를 제안하고 기획</strong>해 사용자 재방문과 참여를 독려했습니다.</li></ul><ul id="203ed6b7-c1e9-801d-98aa-e523cb9f2922" class="bulleted-list"><li style="list-style-type:disc">기획, 디자인, 개발 간 협업 조율을 통해 기능 구현과 디자인 방향의 조화를 유지하며 프로젝트 품질을 확보했습니다.</li></ul><p id="203ed6b7-c1e9-8095-bc77-f1fe96422c48" class=""><strong>Result</strong></p><ul id="203ed6b7-c1e9-801c-ba84-f3c66e422c27" class="bulleted-list"><li style="list-style-type:disc">직관적인 <strong>활동 대시보드 UI</strong>를 통해 사용자의 활동 이력을 쉽게 파악할 수 있게 되어, 마이페이지 방문과 커뮤니티 참여가 증가했습니다.</li></ul><ul id="203ed6b7-c1e9-80fe-a501-f94f5bf14ac8" class="bulleted-list"><li style="list-style-type:disc">애니메이션과 인터랙티브 온보딩 UI로 신규 사용자 서비스 이해도와 참여율이 크게 향상되었습니다.</li></ul><ul id="203ed6b7-c1e9-804f-8876-f5366d7f8d27" class="bulleted-list"><li style="list-style-type:disc">제안한 게이미피케이션 요소가 반영되어 재방문율과 사용자 활동성이 긍정적으로 개선되었으며, 일부 기능은 실제 운영 서비스에 성공적으로 반영되어 실무 경험을 쌓았습니다.</li></ul></div></div><h1 id="203ed6b7-c1e9-8003-b7a4-c7ae09ced1b4" class=""><mark class="highlight-blue">Activities</mark></h1><div id="203ed6b7-c1e9-80b2-ab16-c832972dadbb" class="column-list"><div id="203ed6b7-c1e9-80e8-9923-f5e5bea8afe4" style="width:50.00000000000002%" class="column"><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="203ed6b7-c1e9-80c7-bfdf-d294f2fda031"><div style="width:100%"><h3 id="203ed6b7-c1e9-8078-8a04-f2be7396c3d2" class="">오픈소스 컨트리뷰션 아카데미(OSSCA)</h3><p id="203ed6b7-c1e9-80d4-9b9d-dc75c0ba0f75" class="">2025.04 - 2025.05</p><ul id="203ed6b7-c1e9-804e-9269-caa94fad06fb" class="bulleted-list"><li style="list-style-type:disc">Chromium 프로젝트에 기여</li></ul><ul id="203ed6b7-c1e9-8025-9de3-f62a4fee6ba3" class="bulleted-list"><li style="list-style-type:disc">macView UI 관련 릴리스 문서 수정 및 개선</li></ul></div></figure></div><div id="203ed6b7-c1e9-80d1-9d65-dbf1a05e6ac0" style="width:50.000000000000014%" class="column"><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="203ed6b7-c1e9-8088-9920-c2ae37270a77"><div style="width:100%"><h3 id="203ed6b7-c1e9-8013-9519-f036c1b4e349" class="">Udemy 러닝크루 리더</h3><p id="203ed6b7-c1e9-80b7-97ea-e369fd8ba3f6" class="">2025.02 - 2025.04</p><ul id="203ed6b7-c1e9-80ba-8196-f18bbff3e06f" class="bulleted-list"><li style="list-style-type:disc">Next.js 15 &amp; React 강의 리더로서 커리큘럼을 기획하고 스터디를 주도</li></ul><ul id="203ed6b7-c1e9-8090-8e7a-fcedc954e34d" class="bulleted-list"><li style="list-style-type:disc">매주 1회 블로그 정리와 코드 리뷰를 통해 학습 내용을 공유하고 팀 역량 강화</li></ul></div></figure></div></div><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="203ed6b7-c1e9-8000-abe4-ef6b1105e6df"><div style="width:100%"><h3 id="203ed6b7-c1e9-807d-96e6-f94bcdd5bdda" class="">한국대학생IT 경영학회(Kusitms)</h3><p id="203ed6b7-c1e9-80cb-8a0b-d272fb5e2216" class="">2024.08 - 2025.06</p><ul id="203ed6b7-c1e9-800e-a149-ef2e2745a4e5" class="bulleted-list"><li style="list-style-type:disc">경활총괄팀 소속으로 커뮤니티 행사 및 내부 프로그램 기획</li></ul><ul id="203ed6b7-c1e9-8083-8418-c3a859a0bcd3" class="bulleted-list"><li style="list-style-type:disc">독서 스터디, 기술 블로그 스터디 진행 중</li></ul></div></figure><h1 id="203ed6b7-c1e9-800f-b213-d338154b519b" class=""><mark class="highlight-blue">Awords</mark></h1><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="203ed6b7-c1e9-80a4-95cd-d001e95031ec"><div style="width:100%"><h3 id="203ed6b7-c1e9-8077-9667-f30b76abf320" class="">2024 부산 해양 데이터 해커톤</h3><p id="203ed6b7-c1e9-80eb-b88c-dd1ec25cd82b" class=""><strong>장려상 수상 | 프론트엔드 개발자</strong></p><ul id="203ed6b7-c1e9-800a-b8f4-c234714a0e73" class="bulleted-list"><li style="list-style-type:disc">해양 쓰레기 문제 시각화 서비스 &quot;줍기 장인&quot; 개발</li></ul><ul id="203ed6b7-c1e9-804d-9890-d091197183f2" class="bulleted-list"><li style="list-style-type:disc">지도에 쓰레기 데이터의 밀도와 색상 진하기로 표현</li></ul><ul id="203ed6b7-c1e9-805b-a688-d502ef135fed" class="bulleted-list"><li style="list-style-type:disc">기획, 데이터 분석, 백엔드 담당자와 협업하여 프로젝트 완성</li></ul></div></figure><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="203ed6b7-c1e9-807f-8e07-dcc8a0c1ad8c"><div style="width:100%"><h3 id="203ed6b7-c1e9-8001-b8aa-fcdbbfc2c524" class="">드론 자율 비행 충돌 회피 시스템 개발</h3><p id="203ed6b7-c1e9-80c3-9778-ff64ac412917" class=""><strong>제1저자 | 한국정보기술학회 2021 하계 대학생 논문 경진대회 금상 (인용 376회)</strong></p><ul id="203ed6b7-c1e9-809d-9823-fb9fd52a855b" class="bulleted-list"><li style="list-style-type:disc">거리 계산 알고리즘 및 실시간 장애물 회피 시스템 설계 및 구현</li></ul><ul id="203ed6b7-c1e9-8080-be07-d7da2cbc83bd" class="bulleted-list"><li style="list-style-type:disc">다중 센서 기반 이동 장애물 탐지 기능 개발</li></ul><ul id="203ed6b7-c1e9-8096-8269-f73c0177974f" class="bulleted-list"><li style="list-style-type:disc">발표 및 발표 자료 제작 전담</li></ul></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
